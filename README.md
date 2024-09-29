@@ -1,5 +1,5 @@
 # HPD-Kit
-HPD-Kit(Henbio Pathogen Detection Toolkit) is a robust, plug-and-play, and reproducible pathogen analysis tool. It is implemented using Singularity container technology and the Nextflow workflow framework.
+HPD-Kit(Henbio Pathogen Detection Toolkit) is a robust, plug-and-play, and reproducible pathogen analysis tool. It is implemented using Singularity container technology and the Nextflow workflow framework.Below are the usage instructions for HPD-Kit.
 
 ## Installing Singularity on Your Linux System
 
