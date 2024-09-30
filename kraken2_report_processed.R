@@ -18,7 +18,7 @@ min_unique_kmers_rate  <-  as.numeric(args[7])  # unique_kmers / genome_size
 pathogen_type <- args[8]   # bacteria virus fungi parasite
 genome_infor_file <- args[9]
 
-##########################  剔除假阳性，过滤条件 #############################################################
+#############################################################################################################
 # 1. k2_reads_count >= 10
 # 2. relative_abundance >= 0.005(%)
 # 3. unique_kmers >= 800
