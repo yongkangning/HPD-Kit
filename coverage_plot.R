@@ -26,16 +26,16 @@ print(paste0("taxid: ", taxid))
 print(paste0("seqid: ", seqid))
 print(paste0("cov_file: ", cov_file))
 
-# 读入覆盖度结果
+# 
 cov_data <- fread(cov_file, sep = "\t", col.names = c("Seqid", "Position", "Depth"))
-# 对测序深度进行SymLog转换log1p(x) = log(1+x)
+# SymLog log1p(x) = log(1+x)
 cov_data$coverage <- log1p(cov_data$Depth)
-# 计算测序深度和覆盖度
+# 
 coverage <- round(cov_data[, sum(Depth > 0) / .N] * 100, 4)
 depth <- round(cov_data[, sum(Depth) / .N], 4)
 text_infor <-  paste0("Avg Coverage:", coverage, "%  Avg Depth:", depth, "X")
 
-# 待完成 怎么像文献一样计算区间内的覆盖度
+# 
 # cov_data[, coverage := frollsum(Depth, n = 100, align = 'right', fill = 0) / 100]
 
 
@@ -43,8 +43,8 @@ p <- ggplot(cov_data, aes(x = Position, y = coverage)) +
   geom_line(color = "skyblue") +
   theme_classic() +
   labs(title = seqid, subtitle = text_infor, x = "Reference Position", y = "Coverage(SymLog)") +
-  scale_x_continuous(expand = c(0,0), labels = scales::comma) + # 不用科学计数法
-  scale_y_continuous(expand = c(0,0)) + # y轴和x轴从原点开始
+  scale_x_continuous(expand = c(0,0), labels = scales::comma) + 
+  scale_y_continuous(expand = c(0,0)) + 
   theme(
     panel.grid = element_blank(),
     plot.title = element_text(hjust = 1, margin = margin(b = 10)),
