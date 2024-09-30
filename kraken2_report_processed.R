@@ -50,7 +50,7 @@ k2_report <- read_tsv(k2_report_file, col_names = c("Percentage", "accumulate_re
 
 genome_infor <- read_tsv(genome_infor_file) %>% dplyr::select(taxid, assembly_accession, scaffold_count, genome_size)
 
-# 界（Kingdom）门（Phylum）纲（Class）目（Order）科（Family）属（Genus）种（Species）
+# Kingdom Phylum Class Order Family Genus Species
 # 0 1 2 3 4 5 6 7 8 9
 # U R D K P C O F G S
 
@@ -96,7 +96,7 @@ k2_raw <- k2_report %>%
 write_tsv(k2_raw, paste0(sample_id, ".k2.", pathogen_type, ".raw.xls"))
 
 
-# 只处理科、属、种和有序列的级别
+# 
 k2_filtered <- k2_raw %>% filter(str_sub(rank, 1, 1) %in% c("F", "G", "S")) %>%
   inner_join(genome_infor, by = "taxid") %>%
   mutate(is_passed = if_else(accumulate_reads_count >= min_k2_reads_count &
@@ -116,6 +116,6 @@ print(paste0("[INFO] There are a total of " , k2_passed_count, " pathogens that 
 write_tsv(k2_passed, paste0(sample_id, ".k2.", pathogen_type, ".filtered.xls"))
 
 
-# 输出未通过过滤条件的病原体，方便后期检查是否漏检
+#
 k2_unpassed <- k2_filtered %>% filter(is_passed == "unpassed") %>% dplyr::select(-is_passed)
 write_tsv(k2_unpassed, paste0(sample_id, ".k2.", pathogen_type, ".unpassed.xls"))
