@@ -39,7 +39,7 @@ read2_res <- read2_input %>% group_by(qseqid, sseqid) %>% arrange(desc(bitscore)
 read_res <- read1_res %>% inner_join(read2_res, by = c("qseqid","sseqid")) %>%
   mutate(avg_pident_reads = (pident_r1 + pident_r2) / 2)
 
-## 如何匹配不上，就输结果为0
+
 if (nrow(read_res) == 0 ) {
   blast_out <- tibble(sample_id = sample_id,
                       taxid = taxid,
