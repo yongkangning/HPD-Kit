@@ -49,7 +49,7 @@ When `pathogenTypes` specifies only one type of pathogen, the contents of these 
 
 ### Paired-end Sequencing Data
 
-If you have a paired-end sequencing sample (e.g., `SRR8476435_1.fastq.gz`, `SRR8476435_2.fastq.gz`) stored in `/home/user/data`, and the HPD-Kit database and image have been downloaded and extracted to `/home/user/data/HPD-Kit`, you can analyze the sample for four types of pathogens (bacteria, virus, fungi, parasite) using the following command:
+If you have a paired-end sequencing sample (e.g., `SRR8476435_1.fastq.gz`, `SRR8476435_2.fastq.gz`) stored in `/home/user/data`, and the HPD-Kit database and image have been downloaded and extracted to `/home/user/data/HPD-Kit/db`, you can analyze the sample for four types of pathogens (bacteria, virus, fungi, parasite) using the following command:
 
 ```bash
 singularity exec /home/user/data/HPD-Kit/HPD-Kit-v2.0.img \
@@ -58,6 +58,7 @@ singularity exec /home/user/data/HPD-Kit/HPD-Kit-v2.0.img \
     --fastq1=/home/user/data/SRR8476435_1.fastq.gz \
     --fastq2=/home/user/data/SRR8476435_2.fastq.gz \
     --pathogenTypes=bacteria,virus,fungi,parasite \
+    --pathogen_db_path=/home/user/data/HPD-Kit/db \
     --outDir=result
 ```
 
@@ -78,6 +79,7 @@ singularity exec /home/user/data/HPD-Kit/HPD-Kit-v2.0.img \
     --dehost_method=bowtie2 \
     --host_fasta=/home/user/data/bowtie2_index/Homo_sapiens \
     --pathogenTypes=bacteria,virus,fungi,parasite \
+    --pathogen_db_path=/home/user/data/HPD-Kit/db \
     --outDir=result
 ```
 
@@ -92,6 +94,7 @@ singularity exec /home/user/data/HPD-Kit/HPD-Kit-v2.0.img \
     --dehost_method=bbduk \
     --host_fasta=/home/user/data/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
     --pathogenTypes=bacteria,virus,fungi,parasite \
+    --pathogen_db_path=/home/user/data/HPD-Kit/db \
     --outDir=result
 ```
 
@@ -115,6 +118,7 @@ singularity exec /home/user/data/HPD-Kit/HPD-Kit-v2.0.img \
     --metadataFile=/home/user/data/metadata.txt \
     --dehost_method=bbduk \
     --pathogenTypes=bacteria,virus,fungi,parasite \
+    --pathogen_db_path=/home/user/data/HPD-Kit/db \
     --outDir=result
 ```
 
@@ -136,6 +140,7 @@ singularity exec /home/user/data/HPD-Kit/HPD-Kit-v2.0.img \
     --comparisonFile=/home/user/data/comparison_file.txt \
     --dehost_method=bbduk \
     --pathogenTypes=bacteria,virus,fungi,parasite \
+    --pathogen_db_path=/home/user/data/HPD-Kit/db \
     --outDir=result
 ```
 
