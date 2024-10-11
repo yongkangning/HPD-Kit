@@ -65,7 +65,7 @@ singularity exec /home/user/data/HPD-Kit/HPD-Kit-v2.0.img \
 By default, dehosting is not performed. If you need to remove the host, you can use `bowtie2` or `bbduk`. For `bowtie2`, create an index file with:
 
 ```bash
-bowtie2-build -f /home/user/data/Homo_sapiens.GRCh38.dna.primary_assembly.fa --threads 6 /home/user/data/bowtie2_index/Homo_sapiens
+singularity exec /home/user/data/HPD-Kit/HPD-Kit-v2.0.img bowtie2-build -f /home/user/data/Homo_sapiens.GRCh38.dna.primary_assembly.fa --threads 6 /home/user/data/bowtie2_index/Homo_sapiens
 ```
 
 Then run:
