@@ -6,7 +6,7 @@ HPD-Kit(Henbio Pathogen Detection Toolkit) is a robust, plug-and-play, and repro
 To install Singularity, run the following command:
 
 ```bash
-\# The Singularity version must be 3.x.x or higher.
+# The Singularity version must be 3.x.x or higher.
 conda install singularity=3.8.6
 ```
 
