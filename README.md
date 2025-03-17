@@ -186,4 +186,4 @@ Upon successful completion, you will find the following directories in the `resu
 
 ## Contact Us
 
-If you have any questions or require further assistance, feel free to contact us via email at zhangzn340@163.com. We are here to help!
+If the HPD-Kit pathogen detection database does not currently cover your target pathogen(s), please submit genomic information and characteristic data of the specimen. Approved submissions will be prioritized for integration in subsequent database updates. For technical consultations or customized analytical needs, contact us at zhangzn340@163.com.
