@@ -13,7 +13,7 @@ conda install singularity=3.8.6
 ## Downloading Image and Database Files
 
 - Download the HPD-Kit-v2.0.img image and the accompanying database from the following links:
-- http://g211r34445.iok.la  or  https://pan.baidu.com/s/1nH5Uv_BoeBpGalr7bllt0A?pwd=68cd
+- http://g211r34445.iok.la/htdocs/HPD-Kit  or  https://pan.baidu.com/s/1nH5Uv_BoeBpGalr7bllt0A?pwd=68cd
 - decompression the Singularity image and database files:
   ```bash
   gunzip HPD-Kit-v2.0.img.gz
